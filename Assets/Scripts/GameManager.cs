@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
+    public UIManager _uiManager;
 
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         NewGame();
     }
 
@@ -66,11 +68,13 @@ public class GameManager : MonoBehaviour
     private void SetScore(int score)
     {
         this.score = score;
+        _uiManager.updateScore(score);
     }
 
     private void SetLives(int lives)
     {
         this.lives = lives;
+        _uiManager.updateLives(lives);
     }
 
     public void GhostEaten(Ghost ghost)

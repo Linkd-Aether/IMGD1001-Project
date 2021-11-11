@@ -10,11 +10,14 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Text _livesText;
 
+    [SerializeField] private Text _levelText;
+
     // Start is called before the first frame update
     void Start()
     {
         _scoreText.text = "Score: " + 0;
         _livesText.text = "Lives: " + 3;
+        _levelText.text = "Level " + 1;
     }
 
     public void updateScore(int playerScore) {
@@ -23,6 +26,10 @@ public class UIManager : MonoBehaviour
 
     public void updateLives(int playerLives) {
         _livesText.text = "Lives: " + playerLives.ToString();
+    }
+
+    public void updateLevel(int level) {
+        _levelText.text = "Level " + level.ToString();
     }
 
     // Update is called once per frame

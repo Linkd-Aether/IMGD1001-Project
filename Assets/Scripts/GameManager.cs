@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
     public int lives { get; private set; }
+    public int level { get; private set; } = 0;
 
     private void Start()
     {
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
+        this.level++;
+        _uiManager.updateLevel(this.level);
         foreach(Transform pellet in this.pellets)
         {
             pellet.gameObject.SetActive(true);

@@ -510,18 +510,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-
   - component: {fileID: 657853374}
-  - component: {fileID: 657853373}
   - component: {fileID: 657853372}
-  m_Layer: 5
+  - component: {fileID: 657853375}
+  m_Layer: 0
   m_Name: Lives_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-
 --- !u!114 &657853372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,15 +554,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Lives: 3'
---- !u!222 &657853373
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-
-  m_GameObject: {fileID: 657853371}
-  m_CullTransparentMesh: 1
 --- !u!224 &657853374
 RectTransform:
   m_ObjectHideFlags: 0
@@ -584,6 +573,14 @@ RectTransform:
   m_AnchoredPosition: {x: 350, y: -205}
   m_SizeDelta: {x: 79.85, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &657853375
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657853371}
+  m_CullTransparentMesh: 1
 --- !u!1 &764627298
 GameObject:
   m_ObjectHideFlags: 0
@@ -10538,6 +10535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 342893017}
   _livesText: {fileID: 657853372}
+  _levelText: {fileID: 1327989608}
 --- !u!1 &2040651042
 GameObject:
   m_ObjectHideFlags: 0

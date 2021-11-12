@@ -510,6 +510,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+
   - component: {fileID: 657853374}
   - component: {fileID: 657853373}
   - component: {fileID: 657853372}
@@ -520,6 +521,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+
 --- !u!114 &657853372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,6 +562,7 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   m_GameObject: {fileID: 657853371}
   m_CullTransparentMesh: 1
 --- !u!224 &657853374

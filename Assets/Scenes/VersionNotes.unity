@@ -691,45 +691,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Version 0.0.1.0s1 Patch Notes
-
-
-    -Original sample project preserved
-    as a scene
-
-
-    -Original sample project is now accessed from the Start Screen
-
-
-    -Scrolling
-    credits screen has been added
-
-
-    -Scrolling Version Notes screen was added
-
-
-
-    Version
-    0.0.2.0s1 Patch Notes
-
-
-    -Added Game UI - displays lives, level number, and
-    score in real time
-
-
-
-    Version 0.0.3.0s1 Patch Notes
-
-
-    -Added Start Screen
-
-
-    -Made
-    all other scenes accessible from Start Screen
-
-
-    -Added ''return to menu''
-    buttons from credits + version notes'
+  m_Text: "Controls:\nW = Move Up     A = Move Left     S = Move Down     D = Move
+    Right  \n\n\nVersion 0.0.1.0s1 Patch Notes\n\n-Original sample project preserved
+    as a scene\n\n-Original sample project is now accessed from the Start Screen\n\n-Scrolling
+    credits screen has been added\n\n-Scrolling Version Notes screen was added\n\n\nVersion
+    0.0.2.0s1 Patch Notes\n\n-Added Game UI - displays lives, level number, and score
+    in real time\n\n\nVersion 0.0.3.0s1 Patch Notes\n\n-Added Start Screen\n\n-Made
+    all other scenes accessible from Start Screen\n\n-Added 'return to menu' buttons
+    from credits + version notes"
 --- !u!222 &904926185
 CanvasRenderer:
   m_ObjectHideFlags: 0

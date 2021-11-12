@@ -691,18 +691,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Version 0.0.1.0s1 Patch Notes
+  m_Text: 'Controls:
+
+    W = up     A = left     S = down     D = right
 
 
-    -Original sample project preserved
-    as a scene
+
+    Version
+    0.0.1.0s1 Patch Notes
 
 
-    -Original sample project is now accessed from the Start Screen
+    -Original sample project preserved as a scene
 
 
-    -Scrolling
-    credits screen has been added
+    -Original
+    sample project is now accessed from the Start Screen
+
+
+    -Scrolling credits
+    screen has been added
 
 
     -Scrolling Version Notes screen was added

@@ -685,74 +685,23 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Controls:
-
-    W = up     A = left     S = down     D = right
-
-
-
-    Version
-    0.0.1.0s1 Patch Notes
-
-
-    -Original sample project preserved as a scene
-
-
-    -Original
-    sample project is now accessed from the Start Screen
-
-
-    -Scrolling credits
-    screen has been added
-
-
-    -Scrolling Version Notes screen was added
-
-
-
-    Version
-    0.0.2.0s1 Patch Notes
-
-
-    -Added Game UI - displays lives, level number, and
-    score in real time
-
-
-
-    Version 0.0.3.0s1 Patch Notes
-
-
-    -Added Start Screen
-
-
-    -Made
-    all other scenes accessible from Start Screen
-
-
-    -Added ''return to menu''
-    buttons from credits + version notes
-
-
-
-    Version 0.0.4.0s1 Patch Notes
-
-
-    -Added
-    Start Screen background
-
-
-
-    Version 0.0.5.0s1 Patch Notes
-
-
-    -Original
-    Game Scene Accessible from Version Notes page'
+  m_Text: "In-Game Controls:\r\nW = up     A = left     S = down     D = right\r\n\r\n\r\nVersion
+    0.0.1.0s2 Patch Notes:\n-Ordered version notes correctly (newest at top)\n-Fixed
+    version note formatting\n\nVersion 0.0.5.0s1 Patch Notes\r:\n-Original Game Scene
+    Accessible from Version Notes page\r\n\r\nVersion 0.0.4.0s1 Patch Notes\r:\n-Added
+    Start Screen background\r\n\r\nVersion 0.0.3.0s1 Patch Notes\r:\n-Added Start
+    Screen\r\n-Made all other scenes accessible from Start Screen\r\n-Added 'return
+    to menu' buttons from credits + version notes\r\n\r\nVersion 0.0.2.0s1 Patch
+    Notes\r:\n-Added Game UI - displays lives, level number, and score in real time\r\n\r\nVersion
+    0.0.1.0s1 Patch Notes\r:\n-Original sample project preserved as a scene\r\n-Original
+    sample project is now accessed from the Start Screen\r\n-Scrolling credits screen
+    has been added\r\n-Scrolling Version Notes screen was added\r\n"
 --- !u!222 &904926185
 CanvasRenderer:
   m_ObjectHideFlags: 0

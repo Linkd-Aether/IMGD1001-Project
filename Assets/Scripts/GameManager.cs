@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public Pacman pacman;
     public Transform pellets;
     public UIManager _uiManager;
+    public PauseMenu pauseMenu;
+    
 
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
@@ -26,8 +28,11 @@ public class GameManager : MonoBehaviour
         {
             NewGame();
         }
+        if(Input.GetKeyDown(KeyCode.Escape)){        
+            pauseMenu.Pause();            
+        }
     }
-    private void NewGame()
+    public void NewGame()
     {
         SetScore(0);
         SetLives(3);

@@ -11,15 +11,19 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){        
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1f;         
+            Resume();       
         }
 
     }
 
     public void Pause(){
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-        gm.audiostuff.Pause();
+        if(gm.playingPowerup) {
+            gm.powersound.Pause();
+        }
+        else {
+            gm.waka.Pause();
+        }
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -33,7 +37,12 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume(){
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-        gm.audiostuff.Play();
+        if(gm.playingPowerup) {
+            gm.powersound.UnPause();
+        }
+        else {
+            gm.waka.UnPause();
+        }
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }

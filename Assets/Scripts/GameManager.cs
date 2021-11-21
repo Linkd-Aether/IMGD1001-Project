@@ -11,10 +11,17 @@ public class GameManager : MonoBehaviour
     public PauseMenu pauseMenu;
     public AudioClip eat1;
     public AudioClip eat2;
-
+    public AudioClip death;
+    public AudioClip ghostEat;
+    public AudioClip powerPelletEat;
+    public AudioClip powerPelletMode;
+    
+    public AudioSource waka;
     public AudioSource audiostuff;
+    public AudioSource powersound;
     
     public bool playedEat1 = false;
+    public bool playingPowerup = false;
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
     public int lives { get; private set; }
@@ -23,7 +30,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        audiostuff = transform.GetComponent<AudioSource>();
         NewGame();
     }
 
@@ -92,6 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void GhostEaten(Ghost ghost)
     {
+        audiostuff.PlayOneShot(ghostEat);
         int points = ghost.points * this.ghostMultiplier;
         SetScore(this.score + points);
         this.ghostMultiplier++;
@@ -99,6 +106,7 @@ public class GameManager : MonoBehaviour
 
     public void PacmanEaten()
     {
+        audiostuff.PlayOneShot(death);
         this.pacman.gameObject.SetActive(false);
         SetLives(this.lives - 1);
         if(this.lives > 0)
@@ -114,12 +122,12 @@ public class GameManager : MonoBehaviour
     public void PlayEatSound(){
         if(playedEat1) {
             //play eat2
-            audiostuff.PlayOneShot(eat2, 0.2f);
+            audiostuff.PlayOneShot(eat2, 0.5f);
             playedEat1 = false;
         }
         else{
             //play eat 1
-            audiostuff.PlayOneShot(eat1, 0.2f);
+            audiostuff.PlayOneShot(eat1, 0.5f);
             playedEat1 = true;
         }
     }
@@ -139,12 +147,20 @@ public class GameManager : MonoBehaviour
 
     public void PowerPelletEaten(PowerPellet pellet)
     {
+        audiostuff.PlayOneShot(powerPelletEat);
         for (int i = 0; i < this.ghosts.Length; i++)
         {
             this.ghosts[i].frightened.Enable(pellet.duration);
         }
-
         PelletEaten(pellet);
+        if(!playingPowerup) {
+            powersound.mute = false;
+            powersound.Play();
+            waka.Pause();
+            playingPowerup = true;
+        }
+
+        
         CancelInvoke();
         Invoke(nameof(ResetGhostMultiplier), pellet.duration);
     }
@@ -164,6 +180,11 @@ public class GameManager : MonoBehaviour
 
     private void ResetGhostMultiplier()
     {
+        playingPowerup = false;
+
+        waka.UnPause();
+        powersound.Pause();
+        powersound.mute = true;
         this.ghostMultiplier = 1;
     }
 

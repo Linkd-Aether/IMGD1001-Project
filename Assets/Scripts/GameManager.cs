@@ -9,8 +9,12 @@ public class GameManager : MonoBehaviour
     public Transform pellets;
     public UIManager _uiManager;
     public PauseMenu pauseMenu;
-    
+    public AudioClip eat1;
+    public AudioClip eat2;
 
+    public AudioSource audiostuff;
+    
+    public bool playedEat1 = false;
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
     public int lives { get; private set; }
@@ -19,6 +23,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        audiostuff = transform.GetComponent<AudioSource>();
         NewGame();
     }
 
@@ -106,8 +111,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PlayEatSound(){
+        if(playedEat1) {
+            //play eat2
+            audiostuff.PlayOneShot(eat2, 0.2f);
+            playedEat1 = false;
+        }
+        else{
+            //play eat 1
+            audiostuff.PlayOneShot(eat1, 0.2f);
+            playedEat1 = true;
+        }
+    }
+
     public void PelletEaten(Pellet pellet)
     {
+        PlayEatSound();
         pellet.gameObject.SetActive(false);
         SetScore(this.score + pellet.points);
 
@@ -147,4 +166,5 @@ public class GameManager : MonoBehaviour
     {
         this.ghostMultiplier = 1;
     }
+
 }

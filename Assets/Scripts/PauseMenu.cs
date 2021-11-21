@@ -18,6 +18,8 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Pause(){
+        GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gm.audiostuff.Pause();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -30,6 +32,8 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Resume(){
+        GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gm.audiostuff.Play();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }

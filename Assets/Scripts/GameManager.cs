@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        PlayerPrefs.SetInt("finalscore", 0);
         NewGame();
     }
 
@@ -82,6 +84,11 @@ public class GameManager : MonoBehaviour
         }
 
         this.pacman.gameObject.SetActive(false);
+
+        //save score
+        PlayerPrefs.SetInt("finalscore", score);
+        //change to gameover scene
+        SceneManager.LoadScene("GameOver");
     }
 
     private void SetScore(int score)
@@ -106,12 +113,14 @@ public class GameManager : MonoBehaviour
 
     public void PacmanEaten()
     {
+        waka.Pause();
         audiostuff.PlayOneShot(death);
         this.pacman.gameObject.SetActive(false);
         SetLives(this.lives - 1);
         if(this.lives > 0)
         {
             Invoke(nameof(ResetState), 3.0f);
+            
         }
         else
         {

@@ -175,6 +175,8 @@ MonoBehaviour:
   powersound: {fileID: 98510181}
   playedEat1: 0
   playingPowerup: 0
+  volume: 0
+  difficulty: 0
 --- !u!4 &98510179
 Transform:
   m_ObjectHideFlags: 0
@@ -201,7 +203,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a0bf8e0f11187214683a7116fd42c236, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -297,7 +299,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5b0b6a235d3082345930e8ac780f3d9c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -393,7 +395,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

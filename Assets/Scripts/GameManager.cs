@@ -87,6 +87,10 @@ public class GameManager : MonoBehaviour
 
         //save score
         PlayerPrefs.SetInt("finalscore", score);
+        if(score > PlayerPrefs.GetInt("highscore")) {
+            PlayerPrefs.SetInt("highscore", score);
+        }
+        
         //change to gameover scene
         SceneManager.LoadScene("GameOver");
     }

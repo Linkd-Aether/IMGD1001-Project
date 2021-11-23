@@ -27,11 +27,18 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
     public int lives { get; private set; }
     public int level { get; private set; } = 0;
+    public float volume;
+    public int difficulty;
 
     private void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         PlayerPrefs.SetInt("finalscore", 0);
+        volume = (float)PlayerPrefs.GetInt("volume", 100) / 100;
+        waka.volume = volume;
+        audiostuff.volume = volume;
+        powersound.volume = volume;
+        difficulty = PlayerPrefs.GetInt("difficulty", 0);
         NewGame();
     }
 

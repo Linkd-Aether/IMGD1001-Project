@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
     public int lives { get; private set; }
     public int level { get; private set; } = 0;
+    //0.0 - 1.0
     public float volume;
+    //0 - 10
     public int difficulty;
 
     private void Start()
@@ -38,7 +40,16 @@ public class GameManager : MonoBehaviour
         waka.volume = volume;
         audiostuff.volume = volume;
         powersound.volume = volume;
-        difficulty = PlayerPrefs.GetInt("difficulty", 0);
+        if (PlayerPrefs.GetInt("difficulty", 0) == 0) {
+            difficulty = 1;
+        }
+        else if(PlayerPrefs.GetInt("difficulty", 0) == 1) {
+            difficulty = 5;
+        }
+        else {
+            difficulty = 8;
+        }
+
         NewGame();
     }
 
@@ -67,8 +78,17 @@ public class GameManager : MonoBehaviour
         {
             pellet.gameObject.SetActive(true);
         }
+        
 
         ResetState();
+        SetDifficulty();
+    }
+
+    private void SetDifficulty() {
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            this.ghosts[i].movement.speedMultiplier =  (1 + 0.1f * ((float)difficulty/10) * 2.5f);
+        }
     }
 
     private void ResetState()

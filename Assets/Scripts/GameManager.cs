@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
             pauseMenu.Pause();            
         }
         volume = (float)PlayerPrefs.GetInt("volume", 100) / 100;
-        waka.volume = volume;
+        waka.volume = volume - 0.09f;
         audiostuff.volume = volume;
         powersound.volume = volume;
     }
@@ -85,13 +85,13 @@ public class GameManager : MonoBehaviour
         
 
         ResetState();
-        SetDifficulty();
+        
     }
 
     private void SetDifficulty() {
         for (int i = 0; i < ghosts.Length; i++)
         {
-            this.ghosts[i].movement.speedMultiplier =  (1 + 0.1f * ((float)difficulty/10) * 2.5f);
+            this.ghosts[i].movement.speedMultiplier =  (1 + 0.1f * ((float)difficulty/10) * 2.0f);
         }
     }
 
@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
         }
 
         this.pacman.ResetState();
+        SetDifficulty();
     }
 
     private void GameOver()

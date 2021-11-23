@@ -567,7 +567,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1454419170}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.28663334
+  m_Size: 0.21494098
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -764,8 +764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0010948, y: -321.015}
-  m_SizeDelta: {x: 457.45, y: 900}
+  m_AnchoredPosition: {x: 0.0011025, y: -471.11}
+  m_SizeDelta: {x: 457.45, y: 1200.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &904926184
 MonoBehaviour:
@@ -810,17 +810,54 @@ MonoBehaviour:
     
 
     Version
-    0.0.7.0s2 Patch Notes:
+    0.0.4.0s3 Patch Notes:
 
-    -Added all in-game sounds (eat pellet, eat powerpellet,
-    eat ghost, powerpellet mode sounds, etc.)
+    -Added scripts to make volume and difficulty settings
+    work as intended
+
+    -Added working difficulties- right now only based on ghost
+    speed but will continue to be tweaked (Feature 3)
+
+    
+
+    Version 0.0.3.0s3
+    Patch Notes:
+
+    -Added settings screen with volume control and difficulty
+    selection (Feature 2)
+
+    
+
+    Version 0.0.2.0s3 Patch Notes:
+
+    -Added
+    high score variable and displays that on the game over screen
+
+    -Added a
+    blank settings screen and a bunch of scripts to take care of settings
+
+    
+
+    Version
+    0.0.1.0s3 Patch Notes:
+
+    -Added Game Over screen with buttons and display
+    of final score (Feature 1)
+
+    
+
+    Version 0.0.7.0s2 Patch Notes:
+
+    -Added
+    all in-game sounds (eat pellet, eat powerpellet, eat ghost, powerpellet mode
+    sounds, etc.)
 
     -Ensured sounds paused on pause
 
     
 
-    Version
-    0.0.6.0s2 Patch Notes:
+    Version 0.0.6.0s2
+    Patch Notes:
 
     -Added waka-waka sound and death sounds
 

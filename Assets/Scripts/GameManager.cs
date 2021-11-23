@@ -62,6 +62,10 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)){        
             pauseMenu.Pause();            
         }
+        volume = (float)PlayerPrefs.GetInt("volume", 100) / 100;
+        waka.volume = volume;
+        audiostuff.volume = volume;
+        powersound.volume = volume;
     }
     public void NewGame()
     {

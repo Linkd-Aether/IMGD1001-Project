@@ -22,14 +22,13 @@ public class VolumeSaveControl : MonoBehaviour
     public void SaveVolumeButton()
     {
         float volumeValue = volumeSlider.value;
-        PlayerPrefs.SetFloat("VolumeValue", volumeValue);
+        PlayerPrefs.SetInt("volume", (int)volumeValue);
         LoadValues();
     }
 
     void LoadValues()
     {
-        float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
+        float volumeValue = (float)PlayerPrefs.GetInt("volume", 100);
         volumeSlider.value = volumeValue;
-        AudioListener.volume = volumeValue;
     }
 }

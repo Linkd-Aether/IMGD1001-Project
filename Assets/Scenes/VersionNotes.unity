@@ -807,7 +807,7 @@ MonoBehaviour:
 
     Escape = Pause
 
-    
+
 
     Version
     0.0.4.0s3 Patch Notes:
@@ -818,155 +818,154 @@ MonoBehaviour:
     -Added working difficulties- right now only based on ghost
     speed but will continue to be tweaked (Feature 3)
 
-    
 
-    Version 0.0.3.0s3
-    Patch Notes:
 
-    -Added settings screen with volume control and difficulty
-    selection (Feature 2)
+    Version 0.0.3.0s3 Patch
+    Notes:
 
-    
+    -Added settings screen with volume control and difficulty selection
+    (Feature 2)
+
+
 
     Version 0.0.2.0s3 Patch Notes:
 
-    -Added
-    high score variable and displays that on the game over screen
+    -Added high score variable
+    and displays that on the game over screen
 
-    -Added a
-    blank settings screen and a bunch of scripts to take care of settings
+    -Added a blank settings screen
+    and a bunch of scripts to take care of settings
 
-    
 
-    Version
-    0.0.1.0s3 Patch Notes:
 
-    -Added Game Over screen with buttons and display
-    of final score (Feature 1)
+    Version 0.0.1.0s3 Patch
+    Notes:
 
-    
+    -Added Game Over screen with buttons and display of final score (Feature
+    1)
+
+
 
     Version 0.0.7.0s2 Patch Notes:
 
-    -Added
-    all in-game sounds (eat pellet, eat powerpellet, eat ghost, powerpellet mode
-    sounds, etc.)
+    -Added all in-game sounds (eat
+    pellet, eat powerpellet, eat ghost, powerpellet mode sounds, etc.)
 
-    -Ensured sounds paused on pause
+    -Ensured
+    sounds paused on pause
 
-    
 
-    Version 0.0.6.0s2
-    Patch Notes:
 
-    -Added waka-waka sound and death sounds
+    Version 0.0.6.0s2 Patch Notes:
 
-    
+    -Added waka-waka
+    sound and death sounds
 
-    Version
-    0.0.5.0s2 Patch Notes:
 
-    -Added noises to buttons
 
-    
+    Version 0.0.5.0s2 Patch Notes:
 
-    Version 0.0.4.0s2
-    Patch Notes:
+    -Added noises
+    to buttons
 
-    -Made splash screen transition script in our intended order:
-    Unity -> Credits -> Title -> Main Menu
 
-    -Added main menu music
 
-    
+    Version 0.0.4.0s2 Patch Notes:
 
-    Version
-    0.0.3.0s2 Patch Notes:
-
-    -Added splash screen before main menu appears
+    -Made splash screen transition
+    script in our intended order: Unity -> Credits -> Title -> Main Menu
 
     -Added
-    splash screen that is navigated after the title screen with credits for Unity,
-    WPI, and Zigurous
+    main menu music
 
-    -Fixed blurry text in some menus
 
-    
 
-    Version
-    0.0.2.0s2 Patch Notes:
+    Version 0.0.3.0s2 Patch Notes:
 
-    -Added pause menu functionality (extra feature)
+    -Added splash screen
+    before main menu appears
+
+    -Added splash screen that is navigated after the
+    title screen with credits for Unity, WPI, and Zigurous
+
+    -Fixed blurry text
+    in some menus
+
+
+
+    Version 0.0.2.0s2 Patch Notes:
+
+    -Added pause menu functionality
+    (extra feature)
+
+    -Added ability to resume game from pause menu
 
     -Added
-    ability to resume game from pause menu
+    ability to start a new game from pause menu
 
-    -Added ability to start a new game
-    from pause menu
+    -Added ability to go to the
+    main menu from the pause menu
 
-    -Added ability to go to the main menu from the pause menu
+    -Added ability to quit the game from the pause
+    menu
 
-    -Added
-    ability to quit the game from the pause menu
+    -Added a quit button to the main menu
 
-    -Added a quit button to the
-    main menu
 
-    
 
-    Version 0.0.1.0s2 Patch Notes:
+    Version 0.0.1.0s2 Patch
+    Notes:
 
-    -Ordered version
-    notes correctly (newest at top)
+    -Ordered version notes correctly (newest at top)
 
-    -Fixed version note formatting
+    -Fixed version
+    note formatting
 
-    
 
-    Version
-    0.0.5.0s1 Patch Notes:
 
-    -Original Game Scene Accessible from Version Notes
-    page
+    Version 0.0.5.0s1 Patch Notes:
 
-    
+    -Original Game Scene
+    Accessible from Version Notes page
+
+
 
     Version 0.0.4.0s1 Patch Notes:
 
-    -Added Start Screen background
+    -Added
+    Start Screen background
 
-    
 
-    Version
-    0.0.3.0s1 Patch Notes:
 
-    -Added Start Screen
+    Version 0.0.3.0s1 Patch Notes:
 
-    -Made all other scenes
-    accessible from Start Screen
+    -Added Start
+    Screen
 
-    -Added ''return to menu'' buttons from credits
-    + version notes
+    -Made all other scenes accessible from Start Screen
 
-    
+    -Added ''return
+    to menu'' buttons from credits + version notes
 
-    Version 0.0.2.0s1 Patch Notes:
 
-    -Added Game
-    UI - displays lives, level number, and score in real time
 
-    
+    Version 0.0.2.0s1 Patch
+    Notes:
 
-    Version
-    0.0.1.0s1 Patch Notes:
+    -Added Game UI - displays lives, level number, and score in real
+    time
 
-    -Original sample project preserved as a scene
 
-    -Original
-    sample project is now accessed from the Start Screen
 
-    -Scrolling credits
-    screen has been added
+    Version 0.0.1.0s1 Patch Notes:
+
+    -Original sample project preserved
+    as a scene
+
+    -Original sample project is now accessed from the Start Screen
+
+    -Scrolling
+    credits screen has been added
 
     -Scrolling Version Notes screen was added
 
@@ -1447,8 +1446,8 @@ Canvas:
   m_GameObject: {fileID: 1285076400}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 415237472}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1

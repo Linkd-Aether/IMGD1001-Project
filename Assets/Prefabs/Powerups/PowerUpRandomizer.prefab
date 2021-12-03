@@ -46,4 +46,5 @@ MonoBehaviour:
   possibilities:
   - {fileID: 7019781206075451611, guid: cfa9aab52b4844e4a91ebb58a9e1767a, type: 3}
   - {fileID: 6984898191323560608, guid: 70308dea1c8a4fb4c8fe344b48df0cae, type: 3}
+  - {fileID: 4516390239395810939, guid: 1d69eef9a76996041be3091bd85f870b, type: 3}
   respawnTimer: 5

@@ -12,11 +12,7 @@ public class PowerUp : MonoBehaviour
         {
             collision.GetComponent<Pacman>().powerUp(powerName);
             FindObjectOfType<GameManager>().PowerUpEaten(this);
+            GetComponentInParent<PowerUpRandomizer>().respawn();
         }
-    }
-
-    void onDisable(){
-        Debug.Log("Eaten!");
-        GetComponentInParent<PowerUpRandomizer>().respawn();
     }
 }

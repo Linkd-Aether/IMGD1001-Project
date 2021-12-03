@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        InterLevelStats.level++;
         if(InterLevelStats.level > 1) {
             NewRound();
         }
@@ -96,7 +97,6 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
-        InterLevelStats.level++;
         _uiManager.updateLevel(InterLevelStats.level);
         _uiManager.updatePlayerLevel(InterLevelStats.playerlvl);
         foreach(Transform pellet in this.pellets)

@@ -58,9 +58,9 @@ public class GameManager : MonoBehaviour
         else {
             difficulty = 8;
         }
-
-        this.level = 1;
+        
         NewGame();
+        
     }
 
     private void Update()
@@ -76,12 +76,6 @@ public class GameManager : MonoBehaviour
         waka.volume = volume - 0.09f;
         audiostuff.volume = volume;
         powersound.volume = volume;
-
-        if (this.xp > 100) {
-            this.xp = 0;
-            SetPlayerLevel(this.playerlvl++);
-        }
-
     }
 
     private void NextLevel() {
@@ -98,11 +92,17 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        SetScore(0);
-        SetXP(0);
-        SetPlayerLevel(0);
-        SetLives(3);
-        NewRound();
+        if(this.level > 1) {
+            NewRound();
+        }
+        else {
+            SetScore(0);
+            SetXP(0);
+            SetPlayerLevel(1);
+            SetLives(3);
+            NewRound();
+        }
+
     }
 
     private void NewRound()
@@ -166,7 +166,24 @@ public class GameManager : MonoBehaviour
     private void SetXP(int xp)
     {
        this.xp = xp;
-       _uiManager.updateXP(xp);
+       
+
+        if(playerlvlup()) {
+            this.xp = this.xp - 100;
+            this.playerlvl++;
+            _uiManager.updatePlayerLevel(this.playerlvl);
+        }
+
+        _uiManager.updateXP(this.xp);
+    }
+
+    private bool playerlvlup() {
+        if(this.xp >= 100) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     private void SetPlayerLevel(int lvl)

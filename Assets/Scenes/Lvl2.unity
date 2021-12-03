@@ -215,7 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 30710143}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Connection_Right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 37849007}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Connection_Left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 77463644}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Connection_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 306295011}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Connection_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 435073244}
   - component: {fileID: 435073246}
   - component: {fileID: 435073245}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Passage_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,7 +1522,7 @@ GameObject:
   - component: {fileID: 999896234}
   - component: {fileID: 999896236}
   - component: {fileID: 999896235}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Passage_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6297,6 +6297,26 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 2147483649
+  - first: {x: -16, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: 15, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
   - first: {x: -15, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -6448,6 +6468,26 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 2147483649
   - first: {x: 14, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: -16, y: 5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: 15, y: 5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -6919,13 +6959,13 @@ Tilemap:
       m_AllTileFlags: 2147483649
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 118
+  - m_RefCount: 122
     m_Data: {fileID: 11400000, guid: 0972a3f7e2454ac4ab6bdb9f59c79102, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 118
+  - m_RefCount: 122
     m_Data: {fileID: 21300000, guid: e52ee8a5840dcaf4499f536c1580873c, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 118
+  - m_RefCount: 122
     m_Data:
       e00: 1
       e01: 0
@@ -6944,13 +6984,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 118
+  - m_RefCount: 122
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -16, y: -18, z: 0}
-  m_Size: {x: 31, y: 34, z: 1}
+  m_Size: {x: 32, y: 34, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -12708,7 +12748,7 @@ GameObject:
   - component: {fileID: 1899679687}
   - component: {fileID: 1899679689}
   - component: {fileID: 1899679688}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Passage_Right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13033,7 +13073,7 @@ GameObject:
   - component: {fileID: 1988309035}
   - component: {fileID: 1988309037}
   - component: {fileID: 1988309036}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Passage_Left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

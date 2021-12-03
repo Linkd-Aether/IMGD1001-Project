@@ -12,12 +12,18 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Text _levelText;
 
+    [SerializeField] private Text _xpText;
+
+    [SerializeField] private Text _playerLevelText;
+
     // Start is called before the first frame update
     void Start()
     {
         _scoreText.text = "Score: " + 0;
         _livesText.text = "Lives: " + 3;
         _levelText.text = "Level " + 1;
+        _xpText.text = "Expierence: " + 0;
+        _playerLevelText.text = "Player Level: " + 1;
     }
 
     public void updateScore(int playerScore) {
@@ -32,9 +38,11 @@ public class UIManager : MonoBehaviour
         _levelText.text = "Level " + level.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+    public void updateXP(int xp) {
+       _xpText.text = "Expierence: " + xp.ToString();
+    }
+    
+    public void updatePlayerLevel(int plevel) {
+       _playerLevelText.text = "Player Level: " + plevel.ToString();
     }
 }

@@ -28,11 +28,18 @@ public class GameManager : MonoBehaviour
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
     public int lives { get; private set; }
-    public int level { get; private set; } = 0;
+    public int level { get; private set; }
     //0.0 - 1.0
     public float volume;
     //0 - 10
     public int difficulty;
+
+    public int xp;
+    public int playerlvl;
+
+    private int GHOSTXP = 15;
+    private int PELLETXP = 1;
+    private int POWERPELLETXP = 4;
 
     private void Start()
     {
@@ -52,6 +59,7 @@ public class GameManager : MonoBehaviour
             difficulty = 8;
         }
 
+        this.level = 1;
         NewGame();
     }
 
@@ -68,10 +76,31 @@ public class GameManager : MonoBehaviour
         waka.volume = volume - 0.09f;
         audiostuff.volume = volume;
         powersound.volume = volume;
+
+        if (this.xp > 100) {
+            this.xp = 0;
+            SetPlayerLevel(this.playerlvl++);
+        }
+
     }
+
+    private void NextLevel() {
+        if(this.level == 1) {
+            this.level++;
+            _uiManager.updateLevel(this.level);
+            SceneManager.LoadScene("Lvl2");
+        }
+        else {
+            NewRound();
+        }
+        
+    }
+
     public void NewGame()
     {
         SetScore(0);
+        SetXP(0);
+        SetPlayerLevel(0);
         SetLives(3);
         NewRound();
     }
@@ -133,6 +162,20 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
+
+    private void SetXP(int xp)
+    {
+       this.xp = xp;
+       _uiManager.updateXP(xp);
+    }
+
+    private void SetPlayerLevel(int lvl)
+    {
+       this.playerlvl = lvl;
+       _uiManager.updatePlayerLevel(lvl);
+    }
+
+
     private void SetScore(int score)
     {
         this.score = score;
@@ -150,6 +193,7 @@ public class GameManager : MonoBehaviour
         audiostuff.PlayOneShot(ghostEat);
         int points = ghost.points * this.ghostMultiplier;
         SetScore(this.score + points);
+        SetXP(this.xp + GHOSTXP);
         this.ghostMultiplier++;
     }
 
@@ -188,17 +232,19 @@ public class GameManager : MonoBehaviour
         PlayEatSound();
         pellet.gameObject.SetActive(false);
         SetScore(this.score + pellet.points);
+        SetXP(this.xp + PELLETXP);
 
         if (!HasRemainingPellets())
         {
             this.pacman.gameObject.SetActive(false);
-            Invoke(nameof(NewRound), 3.0f);
+            Invoke(nameof(NextLevel), 3.0f);
         }
     }
 
     public void PowerPelletEaten(PowerPellet pellet)
     {
         audiostuff.PlayOneShot(powerPelletEat);
+        SetXP(this.xp + POWERPELLETXP);
         for (int i = 0; i < this.ghosts.Length; i++)
         {
             this.ghosts[i].frightened.Enable(pellet.duration);

@@ -65,6 +65,9 @@ public class GameManager : MonoBehaviour
         if(Application.isEditor && Input.GetKeyDown(KeyCode.P)) {
             NextLevel();
         }
+        if(Application.isEditor && Input.GetKeyDown(KeyCode.L)) {
+            InterLevelStats.xp = InterLevelStats.xp + 1000;
+        }
         volume = (float)PlayerPrefs.GetInt("volume", 100) / 100;
         waka.volume = volume - 0.09f;
         audiostuff.volume = volume;
@@ -72,13 +75,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void NextLevel() {
-        if(InterLevelStats.level == 1) {
-            _uiManager.updateLevel(InterLevelStats.level);
-            SceneManager.LoadScene("Lvl2");
-        }
-        else {
-            NewRound();
-        }
+        SceneManager.LoadScene("Level Up");
         
     }
 
@@ -169,6 +166,7 @@ public class GameManager : MonoBehaviour
         if(playerlvlup()) {
             InterLevelStats.xp = InterLevelStats.xp - XP_PER_LEVEL;
             InterLevelStats.playerlvl++;
+            InterLevelStats.skillpoints++;
             _uiManager.updatePlayerLevel(InterLevelStats.playerlvl);
         }
 

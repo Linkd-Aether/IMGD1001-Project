@@ -37,6 +37,7 @@ public class Pacman : MonoBehaviour
     {
         this.movement.ResetState();
         this.gameObject.SetActive(true);
+        Physics2D.IgnoreLayerCollision(6, 9, false);
     }
 
     public void powerUp(string type){

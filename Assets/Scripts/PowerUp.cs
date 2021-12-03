@@ -14,4 +14,9 @@ public class PowerUp : MonoBehaviour
             FindObjectOfType<GameManager>().PowerUpEaten(this);
         }
     }
+
+    void onDisable(){
+        Debug.Log("Eaten!");
+        GetComponentInParent<PowerUpRandomizer>().respawn();
+    }
 }

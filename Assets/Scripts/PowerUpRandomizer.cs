@@ -11,6 +11,9 @@ public class PowerUpRandomizer : MonoBehaviour
     void Start() {
         int num = Random.Range(0, possibilities.Length);
         Instantiate(possibilities[num].gameObject, this.transform);
+    }
+
+    public void respawn(){
         if(respawnTimer > 0) Invoke(nameof(Start), respawnTimer);
     }
 

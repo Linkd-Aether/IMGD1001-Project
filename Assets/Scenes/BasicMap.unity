@@ -621,6 +621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Inky
       objectReference: {fileID: 0}
+    - target: {fileID: 2021026622751159763, guid: 83cccffd83d3101499894c441ce5cb26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6538655820897045858, guid: 83cccffd83d3101499894c441ce5cb26, type: 3}
       propertyPath: target
       value: 
@@ -977,6 +981,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Clyde
       objectReference: {fileID: 0}
+    - target: {fileID: 6152449867316327717, guid: 6c6f36c9fcab57b4caa2cad2f658a190, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6152449867316327718, guid: 6c6f36c9fcab57b4caa2cad2f658a190, type: 3}
       propertyPath: m_Offset.y
       value: 0
@@ -1024,7 +1032,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949694025}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -7700,6 +7708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Pinky
       objectReference: {fileID: 0}
+    - target: {fileID: 2199434529994509184, guid: 9418f740d4f51af40b82886273fa8287, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2199434529994509185, guid: 9418f740d4f51af40b82886273fa8287, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -10503,6 +10515,10 @@ PrefabInstance:
     - target: {fileID: 796553113335439567, guid: 6ba4a7b456f7ea74da5f9f84e2a1bf0d, type: 3}
       propertyPath: m_Name
       value: Ghost_Blinky
+      objectReference: {fileID: 0}
+    - target: {fileID: 796553113335439567, guid: 6ba4a7b456f7ea74da5f9f84e2a1bf0d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1772737513784718070, guid: 6ba4a7b456f7ea74da5f9f84e2a1bf0d, type: 3}
       propertyPath: inside

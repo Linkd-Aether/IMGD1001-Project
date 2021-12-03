@@ -312,7 +312,7 @@ public class GameManager : MonoBehaviour
         {
             Vector3 directionToTarget = potentialTarget.position - currentPosition;
             float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if(dSqrToTarget < closestDistanceSqr)
+            if(dSqrToTarget < closestDistanceSqr && potentialTarget.gameObject.name != "Inside" && potentialTarget.gameObject.name != "Outside")
             {
                 closestDistanceSqr = dSqrToTarget;
                 bestTarget = potentialTarget;

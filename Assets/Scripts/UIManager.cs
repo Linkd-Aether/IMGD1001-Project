@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Text _playerLevelText;
 
+    [SerializeField] private Text _powerupText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +46,9 @@ public class UIManager : MonoBehaviour
     
     public void updatePlayerLevel(int plevel) {
        _playerLevelText.text = "Player Level: " + plevel.ToString();
+    }
+
+    public void updatePowerUp(string str) {
+       _powerupText.text = "" + str;
     }
 }

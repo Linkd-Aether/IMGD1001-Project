@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
         InterLevelStats.level++;
         _uiManager.updateLevel(InterLevelStats.level);
         _uiManager.updatePlayerLevel(InterLevelStats.playerlvl);
+        _uiManager.updateXP(InterLevelStats.xp);
         foreach(Transform pellet in this.pellets)
         {
             pellet.gameObject.SetActive(true);

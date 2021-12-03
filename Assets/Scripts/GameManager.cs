@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
+    public Transform nodes;
+    public Transform powerUps;
     public UIManager _uiManager;
     public PauseMenu pauseMenu;
     public AudioClip eat1;
@@ -83,6 +85,10 @@ public class GameManager : MonoBehaviour
             pellet.gameObject.SetActive(true);
         }
         
+        foreach(Transform powerUp in this.powerUps)
+        {
+            powerUp.gameObject.SetActive(true);
+        }
 
         ResetState();
         
@@ -133,7 +139,7 @@ public class GameManager : MonoBehaviour
         _uiManager.updateScore(score);
     }
 
-    private void SetLives(int lives)
+    public void SetLives(int lives)
     {
         this.lives = lives;
         _uiManager.updateLives(lives);
@@ -210,6 +216,12 @@ public class GameManager : MonoBehaviour
         Invoke(nameof(ResetGhostMultiplier), pellet.duration);
     }
 
+    public void PowerUpEaten(PowerUp eaten){
+        PlayEatSound();
+        eaten.gameObject.SetActive(false);
+        SetScore(this.score + eaten.score);
+    }
+
     private bool HasRemainingPellets()
     {
         foreach (Transform pellet in this.pellets)
@@ -231,6 +243,25 @@ public class GameManager : MonoBehaviour
         powersound.Pause();
         powersound.mute = true;
         this.ghostMultiplier = 1;
+    }
+
+    public static Transform GetClosestObject (Transform origin, Transform objects)
+    {
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = origin.position;
+        foreach(Transform potentialTarget in objects)
+        {
+            Vector3 directionToTarget = potentialTarget.position - currentPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if(dSqrToTarget < closestDistanceSqr)
+            {
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = potentialTarget;
+            }
+        }
+     
+        return bestTarget;
     }
 
 }

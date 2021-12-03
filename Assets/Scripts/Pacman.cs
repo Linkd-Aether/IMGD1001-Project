@@ -38,4 +38,27 @@ public class Pacman : MonoBehaviour
         this.movement.ResetState();
         this.gameObject.SetActive(true);
     }
+
+    public void powerUp(string type){
+        if(type.Equals("Phase")){
+            Physics2D.IgnoreLayerCollision(6, 9);
+            this.movement.checkOccupied = false;
+            Invoke(nameof(unGhost), 10);
+        }
+        if(type.Equals("Extra Life")){
+            GameManager manager = FindObjectOfType<GameManager>();
+            manager.SetLives(manager.lives + 1);
+        }
+    }
+    
+    private void unGhost(){
+        
+        Transform toTP = GameManager.GetClosestObject(this.transform, FindObjectOfType<GameManager>().nodes);
+        
+        this.transform.position = new Vector3(toTP.position.x, toTP.position.y, this.transform.position.z);
+
+        Physics2D.IgnoreLayerCollision(6, 9, false);
+        this.movement.checkOccupied = true;
+    }
+
 }

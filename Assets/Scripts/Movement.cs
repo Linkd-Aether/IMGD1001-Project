@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
     public float speed = 8.0f;
     public float speedMultiplier = 1.0f;
 
+    public bool checkOccupied { get; set; }
+
     public Vector2 initialDirection;
     public Vector2 direction { get; private set; }
     public Vector2 nextDirection { get; private set; }
@@ -31,6 +33,8 @@ public class Movement : MonoBehaviour
     public void ResetState()
     {
         //this.speedMultiplier = 1.0f;
+        this.checkOccupied = true;
+
         this.direction = this.initialDirection;
         this.nextDirection = Vector2.zero;
         this.transform.position = this.startingPosition;
@@ -56,7 +60,7 @@ public class Movement : MonoBehaviour
 
     public void SetDirection(Vector2 direction, bool forced = false)
     {
-        if (forced || !Occupied(direction))
+        if (forced || !checkOccupied || !Occupied(direction))
         {
             this.direction = direction;
             this.nextDirection = Vector2.zero;

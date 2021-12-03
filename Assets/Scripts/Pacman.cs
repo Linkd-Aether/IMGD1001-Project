@@ -6,7 +6,7 @@ using UnityEngine;
 public class Pacman : MonoBehaviour
 {
     public Movement movement { get; private set; }
-
+    private const float FAST_RATIO = 1.5f;
     private void Awake()
     {
         this.movement = GetComponent<Movement>();
@@ -50,6 +50,10 @@ public class Pacman : MonoBehaviour
             GameManager manager = FindObjectOfType<GameManager>();
             manager.SetLives(InterLevelStats.lives + 1);
         }
+        if(type.Equals("Fast")){
+            this.movement.speedMultiplier *= FAST_RATIO;
+            Invoke(nameof(unFast), 10);
+        }
     }
     
     private void unGhost(){
@@ -62,4 +66,7 @@ public class Pacman : MonoBehaviour
         this.movement.checkOccupied = true;
     }
 
+    private void unFast(){
+        this.movement.speedMultiplier /= FAST_RATIO;
+    }
 }

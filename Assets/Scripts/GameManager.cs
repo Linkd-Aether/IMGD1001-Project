@@ -62,6 +62,9 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)){        
             pauseMenu.Pause();            
         }
+        if(Application.isEditor && Input.GetKeyDown(KeyCode.P)) {
+            NextLevel();
+        }
         volume = (float)PlayerPrefs.GetInt("volume", 100) / 100;
         waka.volume = volume - 0.09f;
         audiostuff.volume = volume;

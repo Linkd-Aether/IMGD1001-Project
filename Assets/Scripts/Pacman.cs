@@ -48,7 +48,7 @@ public class Pacman : MonoBehaviour
         }
         if(type.Equals("Extra Life")){
             GameManager manager = FindObjectOfType<GameManager>();
-            manager.SetLives(manager.lives + 1);
+            manager.SetLives(InterLevelStats.lives + 1);
         }
     }
     

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Transform pellets;
     public Transform nodes;
     public Transform powerUps;
-    public UIManager _uiManager;
+    private UIManager _uiManager;
     public PauseMenu pauseMenu;
     public AudioClip eat1;
     public AudioClip eat2;
@@ -26,20 +26,10 @@ public class GameManager : MonoBehaviour
     public bool playedEat1 = false;
     public bool playingPowerup = false;
     public int ghostMultiplier { get; private set; } = 1;
-    public int score { get; private set; }
-    public int lives { get; private set; }
-    public int level { get; private set; }
     //0.0 - 1.0
     public float volume;
     //0 - 10
-    public int difficulty;
-
-    public int xp;
-    public int playerlvl;
-
-    private int GHOSTXP = 15;
-    private int PELLETXP = 1;
-    private int POWERPELLETXP = 4;
+    private const int XP_PER_LEVEL = 1000;
 
     private void Start()
     {
@@ -50,13 +40,13 @@ public class GameManager : MonoBehaviour
         audiostuff.volume = volume;
         powersound.volume = volume;
         if (PlayerPrefs.GetInt("difficulty", 0) == 0) {
-            difficulty = 1;
+            InterLevelStats.difficulty = 1;
         }
         else if(PlayerPrefs.GetInt("difficulty", 0) == 1) {
-            difficulty = 5;
+            InterLevelStats.difficulty = 5;
         }
         else {
-            difficulty = 8;
+            InterLevelStats.difficulty = 8;
         }
         
         NewGame();
@@ -65,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (this.lives <= 0 && Input.anyKeyDown)
+        if (InterLevelStats.lives <= 0 && Input.anyKeyDown)
         {
             NewGame();
         }
@@ -79,9 +69,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void NextLevel() {
-        if(this.level == 1) {
-            this.level++;
-            _uiManager.updateLevel(this.level);
+        if(InterLevelStats.level == 1) {
+            InterLevelStats.level++;
+            _uiManager.updateLevel(InterLevelStats.level);
             SceneManager.LoadScene("Lvl2");
         }
         else {
@@ -92,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        if(this.level > 1) {
+        if(InterLevelStats.level > 1) {
             NewRound();
         }
         else {
@@ -107,8 +97,8 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
-        this.level++;
-        _uiManager.updateLevel(this.level);
+        InterLevelStats.level++;
+        _uiManager.updateLevel(InterLevelStats.level);
         foreach(Transform pellet in this.pellets)
         {
             pellet.gameObject.SetActive(true);
@@ -126,7 +116,7 @@ public class GameManager : MonoBehaviour
     private void SetDifficulty() {
         for (int i = 0; i < ghosts.Length; i++)
         {
-            this.ghosts[i].movement.speedMultiplier =  (1 + 0.1f * ((float)difficulty/10) * 2.0f);
+            this.ghosts[i].movement.speedMultiplier =  (1 + 0.1f * ((float)InterLevelStats.difficulty/10) * 2.0f);
         }
     }
 
@@ -153,32 +143,36 @@ public class GameManager : MonoBehaviour
         this.pacman.gameObject.SetActive(false);
 
         //save score
-        PlayerPrefs.SetInt("finalscore", score);
-        if(score > PlayerPrefs.GetInt("highscore")) {
-            PlayerPrefs.SetInt("highscore", score);
+        PlayerPrefs.SetInt("finalscore", InterLevelStats.score);
+        if(InterLevelStats.score > PlayerPrefs.GetInt("highscore")) {
+            PlayerPrefs.SetInt("highscore", InterLevelStats.score);
         }
         
         //change to gameover scene
         SceneManager.LoadScene("GameOver");
     }
 
+    private void AddPoints(int points){
+        SetXP(InterLevelStats.xp + points);
+        SetScore(InterLevelStats.score + points);
+    }
 
     private void SetXP(int xp)
     {
-       this.xp = xp;
+       InterLevelStats.xp = xp;
        
 
         if(playerlvlup()) {
-            this.xp = this.xp - 100;
-            this.playerlvl++;
-            _uiManager.updatePlayerLevel(this.playerlvl);
+            InterLevelStats.xp = InterLevelStats.xp - XP_PER_LEVEL;
+            InterLevelStats.playerlvl++;
+            _uiManager.updatePlayerLevel(InterLevelStats.playerlvl);
         }
 
-        _uiManager.updateXP(this.xp);
+        _uiManager.updateXP(InterLevelStats.xp);
     }
 
     private bool playerlvlup() {
-        if(this.xp >= 100) {
+        if(InterLevelStats.xp >= XP_PER_LEVEL) {
             return true;
         }
         else {
@@ -188,20 +182,20 @@ public class GameManager : MonoBehaviour
 
     private void SetPlayerLevel(int lvl)
     {
-       this.playerlvl = lvl;
+       InterLevelStats.playerlvl = lvl;
        _uiManager.updatePlayerLevel(lvl);
     }
 
 
     private void SetScore(int score)
     {
-        this.score = score;
+        InterLevelStats.score = score;
         _uiManager.updateScore(score);
     }
 
     public void SetLives(int lives)
     {
-        this.lives = lives;
+        InterLevelStats.lives = lives;
         _uiManager.updateLives(lives);
     }
 
@@ -209,8 +203,7 @@ public class GameManager : MonoBehaviour
     {
         audiostuff.PlayOneShot(ghostEat);
         int points = ghost.points * this.ghostMultiplier;
-        SetScore(this.score + points);
-        SetXP(this.xp + GHOSTXP);
+        AddPoints(points);
         this.ghostMultiplier++;
     }
 
@@ -219,8 +212,8 @@ public class GameManager : MonoBehaviour
         waka.Pause();
         audiostuff.PlayOneShot(death);
         this.pacman.gameObject.SetActive(false);
-        SetLives(this.lives - 1);
-        if(this.lives > 0)
+        SetLives(InterLevelStats.lives - 1);
+        if(InterLevelStats.lives > 0)
         {
             Invoke(nameof(ResetState), 3.0f);
             
@@ -248,8 +241,7 @@ public class GameManager : MonoBehaviour
     {
         PlayEatSound();
         pellet.gameObject.SetActive(false);
-        SetScore(this.score + pellet.points);
-        SetXP(this.xp + PELLETXP);
+        AddPoints(pellet.points);
 
         if (!HasRemainingPellets())
         {
@@ -261,7 +253,6 @@ public class GameManager : MonoBehaviour
     public void PowerPelletEaten(PowerPellet pellet)
     {
         audiostuff.PlayOneShot(powerPelletEat);
-        SetXP(this.xp + POWERPELLETXP);
         for (int i = 0; i < this.ghosts.Length; i++)
         {
             this.ghosts[i].frightened.Enable(pellet.duration);
@@ -282,7 +273,7 @@ public class GameManager : MonoBehaviour
     public void PowerUpEaten(PowerUp eaten){
         PlayEatSound();
         eaten.gameObject.SetActive(false);
-        SetScore(this.score + eaten.score);
+        SetScore(InterLevelStats.score + eaten.score);
     }
 
     private bool HasRemainingPellets()

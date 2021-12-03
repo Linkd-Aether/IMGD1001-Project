@@ -70,7 +70,6 @@ public class GameManager : MonoBehaviour
 
     private void NextLevel() {
         if(InterLevelStats.level == 1) {
-            InterLevelStats.level++;
             _uiManager.updateLevel(InterLevelStats.level);
             SceneManager.LoadScene("Lvl2");
         }
@@ -99,6 +98,7 @@ public class GameManager : MonoBehaviour
     {
         InterLevelStats.level++;
         _uiManager.updateLevel(InterLevelStats.level);
+        _uiManager.updatePlayerLevel(InterLevelStats.playerlvl);
         foreach(Transform pellet in this.pellets)
         {
             pellet.gameObject.SetActive(true);

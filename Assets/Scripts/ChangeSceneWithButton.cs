@@ -12,7 +12,16 @@ public class ChangeSceneWithButton: MonoBehaviour {
             Application.Quit();
         }
         
-    }  
+    }
+
+    public void LoadNextLevel() {
+        if(InterLevelStats.level == 1) {
+            LoadScene("Lvl2");
+        }
+        else {
+            LoadScene("Lvl2");
+        }
+    }
       
 
 }   

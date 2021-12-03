@@ -567,7 +567,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1454419170}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.21494098
+  m_Size: 0.15174705
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -764,8 +764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0011025, y: -471.11}
-  m_SizeDelta: {x: 457.45, y: 1200.19}
+  m_AnchoredPosition: {x: -0.0010986, y: -721.015}
+  m_SizeDelta: {x: 457.45, y: 1700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &904926184
 MonoBehaviour:
@@ -800,176 +800,53 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'In-Game Controls:
-
-    W/Up Arrow = Move Up     A/Left Arrow = Move Left    
-    S/Down Arrow = Move Down     D/Right Arrow = Move Right
-
-    Escape = Pause
-
-
-
-    Version
-    0.0.4.0s3 Patch Notes:
-
-    -Added scripts to make volume and difficulty settings
-    work as intended
-
-    -Added working difficulties- right now only based on ghost
-    speed but will continue to be tweaked (Feature 3)
-
-
-
-    Version 0.0.3.0s3 Patch
-    Notes:
-
-    -Added settings screen with volume control and difficulty selection
-    (Feature 2)
-
-
-
-    Version 0.0.2.0s3 Patch Notes:
-
-    -Added high score variable
-    and displays that on the game over screen
-
-    -Added a blank settings screen
-    and a bunch of scripts to take care of settings
-
-
-
-    Version 0.0.1.0s3 Patch
-    Notes:
-
-    -Added Game Over screen with buttons and display of final score (Feature
-    1)
-
-
-
-    Version 0.0.7.0s2 Patch Notes:
-
-    -Added all in-game sounds (eat
-    pellet, eat powerpellet, eat ghost, powerpellet mode sounds, etc.)
-
-    -Ensured
-    sounds paused on pause
-
-
-
-    Version 0.0.6.0s2 Patch Notes:
-
-    -Added waka-waka
-    sound and death sounds
-
-
-
-    Version 0.0.5.0s2 Patch Notes:
-
-    -Added noises
-    to buttons
-
-
-
-    Version 0.0.4.0s2 Patch Notes:
-
-    -Made splash screen transition
-    script in our intended order: Unity -> Credits -> Title -> Main Menu
-
-    -Added
-    main menu music
-
-
-
-    Version 0.0.3.0s2 Patch Notes:
-
-    -Added splash screen
-    before main menu appears
-
-    -Added splash screen that is navigated after the
-    title screen with credits for Unity, WPI, and Zigurous
-
-    -Fixed blurry text
-    in some menus
-
-
-
-    Version 0.0.2.0s2 Patch Notes:
-
-    -Added pause menu functionality
-    (extra feature)
-
-    -Added ability to resume game from pause menu
-
-    -Added
-    ability to start a new game from pause menu
-
-    -Added ability to go to the
-    main menu from the pause menu
-
-    -Added ability to quit the game from the pause
-    menu
-
-    -Added a quit button to the main menu
-
-
-
-    Version 0.0.1.0s2 Patch
-    Notes:
-
-    -Ordered version notes correctly (newest at top)
-
-    -Fixed version
-    note formatting
-
-
-
-    Version 0.0.5.0s1 Patch Notes:
-
-    -Original Game Scene
-    Accessible from Version Notes page
-
-
-
-    Version 0.0.4.0s1 Patch Notes:
-
-    -Added
-    Start Screen background
-
-
-
-    Version 0.0.3.0s1 Patch Notes:
-
-    -Added Start
-    Screen
-
-    -Made all other scenes accessible from Start Screen
-
-    -Added ''return
-    to menu'' buttons from credits + version notes
-
-
-
-    Version 0.0.2.0s1 Patch
-    Notes:
-
-    -Added Game UI - displays lives, level number, and score in real
-    time
-
-
-
-    Version 0.0.1.0s1 Patch Notes:
-
-    -Original sample project preserved
-    as a scene
-
-    -Original sample project is now accessed from the Start Screen
-
-    -Scrolling
-    credits screen has been added
-
-    -Scrolling Version Notes screen was added
-
-'
+  m_Text: "In-Game Controls:\r\nW/Up Arrow = Move Up     A/Left Arrow = Move Left    
+    S/Down Arrow = Move Down     D/Right Arrow = Move Right\r\nEscape = Pause\r\n\r\n\r\nVersion
+    0.0.6.0s4 Patch Notes:\r\n-Fixed more bugs and fixed UI scaling issue\r\n-Added
+    a new Level Up Screen that appears after level completion (New Feature)\r\n-Added
+    the ability to upgrade stats with skill points acquired from leveling up (New
+    Feature)\r\n\r\nVersion 0.0.5.0s4 Patch Notes:\r\n-Bunch of bugfixes\r\n-Made
+    level transitions\r\n-Converted Score to overall XP\r\n-Added UI elements for
+    powerup descriptions\r\n-Added another powerup: \u2018Fast\u2019 which increased
+    pac-man\u2019s speed temporarily\r\n\r\nVersion 0.0.4.0s4 Patch Notes:\r\n-Added
+    Powerup Randomization System (Feature 4)\r\n-Added Powerup respawn timer  \r\n\r\nVersion
+    0.0.3.0s4 Patch Notes:\r\n-Added a basic xp and player level system.  (Feature
+    3)\r\n-Added UI to view this info\r\n\r\nVersion 0.0.2.0s4 Patch Notes:\r\n-Added
+    2 Custom Powerups (Feature 2)\r\n-Phase: go through walls for a limited time\r\n-Extra
+    Life: get an extra life\r\n\r\nVersion 0.0.1.0s4 Patch Notes:\r\n-Added Second
+    Level (Feature 1)\r\n\r\nVersion 0.0.0.1s4 Patch Notes:\r\n-Fixed canvases to
+    fill the screen without background (bugfix)\r\n\r\nVersion 0.0.4.0s3 Patch Notes:\r\n-Added
+    scripts to make volume and difficulty settings work as intended\r\n-Added working
+    difficulties- right now only based on ghost speed but will continue to be tweaked
+    (Feature 3)\r\n\r\nVersion 0.0.3.0s3 Patch Notes:\r\n-Added settings screen with
+    volume control and difficulty selection (Feature 2)\r\n\r\nVersion 0.0.2.0s3
+    Patch Notes:\r\n-Added high score variable and displays that on the game over
+    screen\r\n-Added a blank settings screen and a bunch of scripts to take care
+    of settings\r\n\r\nVersion 0.0.1.0s3 Patch Notes:\r\n-Added Game Over screen
+    with buttons and display of final score (Feature 1)\r\n\r\nVersion 0.0.7.0s2
+    Patch Notes:\r\n-Added all in-game sounds (eat pellet, eat powerpellet, eat ghost,
+    powerpellet mode sounds, etc.)\r\n-Ensured sounds paused on pause\r\n\r\nVersion
+    0.0.6.0s2 Patch Notes:\r\n-Added waka-waka sound and death sounds\r\n\r\nVersion
+    0.0.5.0s2 Patch Notes:\r\n-Added noises to buttons\r\n\r\nVersion 0.0.4.0s2 Patch
+    Notes:\r\n-Made splash screen transition script in our intended order: Unity
+    -> Credits -> Title -> Main Menu\r\n-Added main menu music\r\n\r\nVersion 0.0.3.0s2
+    Patch Notes:\r\n-Added splash screen before main menu appears\r\n-Added splash
+    screen that is navigated after the title screen with credits for Unity, WPI,
+    and Zigurous\r\n-Fixed blurry text in some menus\r\n\r\nVersion 0.0.2.0s2 Patch
+    Notes:\r\n-Added pause menu functionality (extra feature)\r\n-Added ability to
+    resume game from pause menu\r\n-Added ability to start a new game from pause
+    menu\r\n-Added ability to go to the main menu from the pause menu\r\n-Added ability
+    to quit the game from the pause menu\r\n-Added a quit button to the main menu\r\n\r\nVersion
+    0.0.1.0s2 Patch Notes:\r\n-Ordered version notes correctly (newest at top)\r\n-Fixed
+    version note formatting\r\n\r\nVersion 0.0.5.0s1 Patch Notes:\r\n-Original Game
+    Scene Accessible from Version Notes page\r\n\r\nVersion 0.0.4.0s1 Patch Notes:\r\n-Added
+    Start Screen background\r\n\r\nVersion 0.0.3.0s1 Patch Notes:\r\n-Added Start
+    Screen\r\n-Made all other scenes accessible from Start Screen\r\n-Added 'return
+    to menu' buttons from credits + version notes\r\n\r\nVersion 0.0.2.0s1 Patch
+    Notes:\r\n-Added Game UI - displays lives, level number, and score in real time\r\n\r\nVersion
+    0.0.1.0s1 Patch Notes:\r\n-Original sample project preserved as a scene\r\n-Original
+    sample project is now accessed from the Start Screen\r\n-Scrolling credits screen
+    has been added\r\n-Scrolling Version Notes screen was added\r\n"
 --- !u!222 &904926185
 CanvasRenderer:
   m_ObjectHideFlags: 0

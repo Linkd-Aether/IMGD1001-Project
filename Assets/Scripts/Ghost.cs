@@ -13,6 +13,8 @@ public class Ghost : MonoBehaviour
     public Transform target;
     public int points = 200;
 
+    private float levelMult;
+
     private void Awake()
     {
         this.movement = GetComponent<Movement>();
@@ -67,5 +69,16 @@ public class Ghost : MonoBehaviour
                 FindObjectOfType<GameManager>().PacmanEaten();
             }
         }
+    }
+
+    public void modifyDifficulty(){
+        // Higher difficulty -> higher multiplier
+        float difficultyMult = Mathf.Max((1 + ((float)InterLevelStats.difficulty - InterLevelStats.enemyStat/2) * 0.02f), 0);
+        this.movement.speedMultiplier *= difficultyMult;
+        this.chase.duration *= difficultyMult;
+        
+        this.frightened.duration *= 1/difficultyMult;
+        this.scatter.duration *= 1/difficultyMult;
+        this.home.duration *= 1/difficultyMult;
     }
 }

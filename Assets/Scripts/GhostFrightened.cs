@@ -18,6 +18,8 @@ public class GhostFrightened : GhostBehavior
         this.blue.enabled = true;
         this.white.enabled = false;
 
+        this.eaten = false;
+
         Invoke(nameof(Flash), duration / 2.0f);
     }
 

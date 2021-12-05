@@ -8,14 +8,15 @@ public class Pacman : MonoBehaviour
     public Movement movement { get; private set; }
     private const float FAST_RATIO = 1.5f;
     private UIManager _uiManager;
-
-    void Start() {
-        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-    }
+    private float levelSpeedMult;
 
     private void Awake()
     {
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         this.movement = GetComponent<Movement>();
+
+        levelSpeedMult = 1 + (InterLevelStats.speedStat * 0.02f);
+        this.movement.speedMultiplier *= levelSpeedMult;
     }
 
     // Update is called once per frame
@@ -51,7 +52,7 @@ public class Pacman : MonoBehaviour
             Physics2D.IgnoreLayerCollision(6, 9);
             this.movement.checkOccupied = false;
             _uiManager.updatePowerUp(type);
-            Invoke(nameof(unGhost), 10);
+            Invoke(nameof(unPhase), 10);
         }
         if(type.Equals("Extra Life")){
             GameManager manager = FindObjectOfType<GameManager>();
@@ -66,7 +67,7 @@ public class Pacman : MonoBehaviour
         }
     }
     
-    private void unGhost(){
+    private void unPhase(){
         
         Transform toTP = GameManager.GetClosestObject(this.transform, FindObjectOfType<GameManager>().nodes);
         

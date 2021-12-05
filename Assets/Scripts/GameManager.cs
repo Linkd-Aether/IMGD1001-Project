@@ -29,7 +29,10 @@ public class GameManager : MonoBehaviour
     //0.0 - 1.0
     public float volume;
     //0 - 10
-    private const int XP_PER_LEVEL = 1000;
+
+    private float levelXPMult;
+
+    private const int XP_PER_LEVEL_BASE = 1000;
 
     private void Start()
     {
@@ -48,6 +51,8 @@ public class GameManager : MonoBehaviour
         else {
             InterLevelStats.difficulty = 8;
         }
+
+        levelXPMult = 1 + (InterLevelStats.xpStat * 0.01f);
         
         NewGame();
         
@@ -66,7 +71,7 @@ public class GameManager : MonoBehaviour
             NextLevel();
         }
         if(Application.isEditor && Input.GetKeyDown(KeyCode.L)) {
-            InterLevelStats.xp = InterLevelStats.xp + 1000;
+            InterLevelStats.xp = InterLevelStats.xp + (int)Mathf.Ceil(XP_PER_LEVEL_BASE * (1 + (Mathf.Pow((InterLevelStats.playerlvl), 2) - 1 * 0.01f)));
         }
         volume = (float)PlayerPrefs.GetInt("volume", 100) / 100;
         waka.volume = volume - 0.09f;
@@ -75,7 +80,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void NextLevel() {
-        SceneManager.LoadScene("Level Up");
+        SceneManager.LoadScene("LevelUp");
         
     }
 
@@ -83,6 +88,7 @@ public class GameManager : MonoBehaviour
     {
         InterLevelStats.level++;
         if(InterLevelStats.level > 1) {
+            InterLevelStats.difficulty++;
             NewRound();
         }
         else {
@@ -117,7 +123,7 @@ public class GameManager : MonoBehaviour
     private void SetDifficulty() {
         for (int i = 0; i < ghosts.Length; i++)
         {
-            this.ghosts[i].movement.speedMultiplier =  (1 + 0.1f * ((float)InterLevelStats.difficulty/10) * 2.0f);
+            this.ghosts[i].modifyDifficulty();
         }
     }
 
@@ -154,6 +160,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void AddPoints(int points){
+        points = (int) (points * levelXPMult);
         SetXP(InterLevelStats.xp + points);
         SetScore(InterLevelStats.score + points);
     }
@@ -164,7 +171,10 @@ public class GameManager : MonoBehaviour
        
 
         if(playerlvlup()) {
-            InterLevelStats.xp = InterLevelStats.xp - XP_PER_LEVEL;
+            Debug.Log("XP Before: " + InterLevelStats.xp);
+            Debug.Log("XP Removed: " + (int)Mathf.Ceil(XP_PER_LEVEL_BASE * (1 + (Mathf.Pow((InterLevelStats.playerlvl - 1), 2) * 0.01f))));
+            InterLevelStats.xp = InterLevelStats.xp - (int)Mathf.Ceil(XP_PER_LEVEL_BASE * (1 + (Mathf.Pow((InterLevelStats.playerlvl - 1), 2) * 0.01f)));
+            Debug.Log("New XP Total: " + InterLevelStats.xp);
             InterLevelStats.playerlvl++;
             InterLevelStats.skillpoints++;
             _uiManager.updatePlayerLevel(InterLevelStats.playerlvl);
@@ -174,7 +184,7 @@ public class GameManager : MonoBehaviour
     }
 
     private bool playerlvlup() {
-        if(InterLevelStats.xp >= XP_PER_LEVEL) {
+        if(InterLevelStats.xp >= (int)Mathf.Ceil(XP_PER_LEVEL_BASE * (1 + (Mathf.Pow((InterLevelStats.playerlvl - 1), 2) * 0.01f)))) {
             return true;
         }
         else {
@@ -215,10 +225,10 @@ public class GameManager : MonoBehaviour
         audiostuff.PlayOneShot(death);
         this.pacman.gameObject.SetActive(false);
         SetLives(InterLevelStats.lives - 1);
+        this.pacman.CancelInvoke("unPhase");
         if(InterLevelStats.lives > 0)
         {
             Invoke(nameof(ResetState), 3.0f);
-            
         }
         else
         {

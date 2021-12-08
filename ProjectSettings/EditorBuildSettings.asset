@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelUp.unity
     guid: a687f6d820aa8b943b1e6fa8b4453a51
+  - enabled: 1
+    path: Assets/Scenes/FutureWork.unity
+    guid: 38deebb13f2d047418f35993e33cea43
   m_configObjects: {}

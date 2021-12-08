@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        InterLevelStats.level = 0;
         gm.NewGame();
     }
 

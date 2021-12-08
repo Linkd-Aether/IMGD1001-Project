@@ -164,7 +164,7 @@ MonoBehaviour:
   pellets: {fileID: 1530399950}
   nodes: {fileID: 949694026}
   powerUps: {fileID: 355132696}
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 676388686}
   eat1: {fileID: 8300000, guid: 56c1ea18b86a9ad41a688cc9d5abcc7b, type: 3}
   eat2: {fileID: 8300000, guid: e3f3b5a1d005a814b86063076b40c1b8, type: 3}
   death: {fileID: 8300000, guid: ac2382f0d644cf343919721263898fde, type: 3}
@@ -872,6 +872,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78c32de7342fb83488b4c5dd9e338301, type: 3}
+--- !u!114 &676388686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4959766970001374334, guid: 78c32de7342fb83488b4c5dd9e338301, type: 3}
+  m_PrefabInstance: {fileID: 668016014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb61c873209f2b04195b08bf32cad898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &764627298
 GameObject:
   m_ObjectHideFlags: 0

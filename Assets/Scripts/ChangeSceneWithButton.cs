@@ -22,6 +22,11 @@ public class ChangeSceneWithButton: MonoBehaviour {
             LoadScene("Lvl2");
         }
     }
+
+    public void LoadFirstLevel() {
+        InterLevelStats.level = 0;
+        LoadScene("BasicMap");
+    }
       
 
 }   

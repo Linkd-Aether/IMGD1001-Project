@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Transform nodes;
     public Transform powerUps;
     private UIManager _uiManager;
+    public ShakeBehavior shake;
     public PauseMenu pauseMenu;
     public AudioClip eat1;
     public AudioClip eat2;
@@ -228,6 +229,7 @@ public class GameManager : MonoBehaviour
         this.pacman.CancelInvoke("unPhase");
         if(InterLevelStats.lives > 0)
         {
+            shake.TriggerShake();
             Invoke(nameof(ResetState), 3.0f);
         }
         else

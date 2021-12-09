@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 7276985}
   - component: {fileID: 7276984}
   - component: {fileID: 7276983}
+  - component: {fileID: 7276986}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -206,6 +207,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7276986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033ef3aaa88570e49adf50b5c3139340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &30710142
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +608,7 @@ MonoBehaviour:
   pellets: {fileID: 1777821046}
   nodes: {fileID: 1201587550}
   powerUps: {fileID: 1551280954}
+  shake: {fileID: 7276986}
   pauseMenu: {fileID: 424309786}
   eat1: {fileID: 8300000, guid: 56c1ea18b86a9ad41a688cc9d5abcc7b, type: 3}
   eat2: {fileID: 8300000, guid: e3f3b5a1d005a814b86063076b40c1b8, type: 3}

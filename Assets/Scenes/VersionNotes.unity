@@ -803,9 +803,10 @@ MonoBehaviour:
   m_Text: "In-Game Controls:\r\nW/Up Arrow = Move Up     A/Left Arrow = Move Left    
     S/Down Arrow = Move Down     D/Right Arrow = Move Right\r\nEscape = Pause\r\n\nVersion
     0.0.3.0s5 Patch Notes:\n-Added 3 new levels (Feature 2)\n-Added a Portal spawning
-    powerup\r (Feature 3)\n\nVersion 0.0.2.1s5 Patch Notes:\n-Fixed main menu video
-    layering issue\n\r\nVersion 0.0.2.0s5 Patch Notes:\r\n-Added a screen shake script\r\n-Screen
-    shake is triggered when pacman dies (unless it is a gameover)\r\n\r\nVersion
+    powerup\r (Feature 3)\n-Added \"infinite levels\" where level 5 will warp to
+    level 1 after completion.\n\nVersion 0.0.2.1s5 Patch Notes:\n-Fixed main menu
+    video layering issue\n\r\nVersion 0.0.2.0s5 Patch Notes:\r\n-Added a screen shake
+    script\r\n-Screen shake is triggered when pacman dies (unless it is a gameover)\r\n\r\nVersion
     0.0.1.0s5 Patch Notes:\r\n-Fixed a bug with new level resetting level on loop\r\n-Added
     gif of gameplay to the main menu (Feature 1)\r\n\r\nVersion 0.0.6.0s4 Patch Notes:\r\n-Fixed
     more bugs and fixed UI scaling issue\r\n-Added a new Level Up Screen that appears

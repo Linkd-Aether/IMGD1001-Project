@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GhostChase : GhostBehavior
 {
+
     private void OnDisable()
     {
         this.ghost.scatter.Enable();
@@ -9,6 +10,7 @@ public class GhostChase : GhostBehavior
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         Node node = other.GetComponent<Node>();
 
         // Do nothing while the ghost is frightened

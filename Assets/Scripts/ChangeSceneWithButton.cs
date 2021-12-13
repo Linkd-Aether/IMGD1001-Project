@@ -15,16 +15,16 @@ public class ChangeSceneWithButton: MonoBehaviour {
     }
 
     public void LoadNextLevel() {
-        if(InterLevelStats.level == 1) {
-            LoadScene("Lvl2");
-        }
-        else {
-            LoadScene("Lvl2");
+        int sceneIndex = SceneUtility.GetBuildIndexByScenePath("Lvl" + (InterLevelStats.level % GameManager.numLevels + 1));
+        if(sceneIndex >= 0) {
+            SceneManager.LoadSceneAsync(sceneIndex);
+        } else {
+            LoadFirstLevel();
         }
     }
 
     public void LoadFirstLevel() {
-        InterLevelStats.level = 0;
+        //InterLevelStats.level = 0;
         LoadScene("BasicMap");
     }
       

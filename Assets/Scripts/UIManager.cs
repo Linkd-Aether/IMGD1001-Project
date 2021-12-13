@@ -51,4 +51,8 @@ public class UIManager : MonoBehaviour
     public void updatePowerUp(string str) {
        _powerupText.text = "" + str;
     }
+
+    public string checkPowerUp(){
+        return _powerupText.text;
+    }
 }

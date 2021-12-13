@@ -10,6 +10,10 @@ public class Pacman : MonoBehaviour
     private UIManager _uiManager;
     private float levelSpeedMult;
 
+    public PortalBullet portalBullet;
+    public GameObject orangePortal;
+    private int numPortals;
+
     private void Awake()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -34,6 +38,10 @@ public class Pacman : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)){
             this.movement.SetDirection(Vector2.right);
         }
+        
+        if(numPortals > 0 && this.movement.checkOccupied == true && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.RightControl))){
+            shootPortal();
+        }
 
         float angle = Mathf.Atan2(this.movement.direction.y, this.movement.direction.x);
 
@@ -45,6 +53,7 @@ public class Pacman : MonoBehaviour
         this.movement.ResetState();
         this.gameObject.SetActive(true);
         Physics2D.IgnoreLayerCollision(6, 9, false);
+        resetText();
     }
 
     public void powerUp(string type){
@@ -64,6 +73,10 @@ public class Pacman : MonoBehaviour
             this.movement.speedMultiplier *= FAST_RATIO;
             _uiManager.updatePowerUp(type);
             Invoke(nameof(unFast), 10);
+        }
+        if(type.Equals("Portal")){
+            numPortals = 2;
+            _uiManager.updatePowerUp(type);
         }
     }
     
@@ -85,5 +98,22 @@ public class Pacman : MonoBehaviour
 
     private void resetText(){
         _uiManager.updatePowerUp("None");
+    }
+    
+    private void shootPortal(){
+        PortalBullet portalProj = Instantiate(portalBullet, this.gameObject.transform.position, this.gameObject.transform.rotation);
+        portalProj.GetComponent<Rigidbody2D>().AddForce(this.movement.direction * 5, ForceMode2D.Impulse);
+        if(numPortals == 2){
+            portalProj.GetComponent<SpriteRenderer>().color = Color.yellow;
+            portalProj.Inst("Orange", orangePortal);
+        }
+        if(numPortals == 1){
+            portalProj.GetComponent<SpriteRenderer>().color = Color.blue;
+            portalProj.Inst("Blue", orangePortal);
+        }
+
+        numPortals--;
+        if(numPortals == 0)
+            resetText();
     }
 }

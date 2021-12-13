@@ -34,13 +34,14 @@ public class GameManager : MonoBehaviour
     private float levelXPMult;
 
     private const int XP_PER_LEVEL_BASE = 1000;
+    public const int numLevels = 5;
 
     private void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         PlayerPrefs.SetInt("finalscore", 0);
         volume = (float)PlayerPrefs.GetInt("volume", 100) / 100;
-        waka.volume = volume;
+        waka.volume = volume - 0.09f;
         audiostuff.volume = volume;
         powersound.volume = volume;
         if (PlayerPrefs.GetInt("difficulty", 0) == 0) {
@@ -74,10 +75,6 @@ public class GameManager : MonoBehaviour
         if(Application.isEditor && Input.GetKeyDown(KeyCode.L)) {
             InterLevelStats.xp = InterLevelStats.xp + (int)Mathf.Ceil(XP_PER_LEVEL_BASE * (1 + (Mathf.Pow((InterLevelStats.playerlvl), 2) - 1 * 0.01f)));
         }
-        volume = (float)PlayerPrefs.GetInt("volume", 100) / 100;
-        waka.volume = volume - 0.09f;
-        audiostuff.volume = volume;
-        powersound.volume = volume;
     }
 
     private void NextLevel() {

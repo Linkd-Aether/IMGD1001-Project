@@ -57,6 +57,9 @@ public class Pacman : MonoBehaviour
     }
 
     public void powerUp(string type){
+        if(InterLevelStats.usedPowerUps.Contains(type)) InterLevelStats.usedPowerUps.Add(type);
+        if(InterLevelStats.usedPowerUps.Count == 4) PlayerPrefs.SetInt("hat2", 1);
+
         if(type.Equals("Phase")){
             Physics2D.IgnoreLayerCollision(6, 9);
             this.movement.checkOccupied = false;

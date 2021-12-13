@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     private const int XP_PER_LEVEL_BASE = 1000;
     public const int numLevels = 5;
 
+    private const int numGhostsForHat = 50;
+    private const int numScoreForHat = 50000;
+
     private void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -90,6 +93,9 @@ public class GameManager : MonoBehaviour
             NewRound();
         }
         else {
+            InterLevelStats.numGhostsKilled = 0;
+            InterLevelStats.hasNotDied = true;
+            InterLevelStats.usedPowerUps = new List<string>();
             SetScore(0);
             SetXP(0);
             SetPlayerLevel(1);
@@ -161,6 +167,7 @@ public class GameManager : MonoBehaviour
         points = (int) (points * levelXPMult);
         SetXP(InterLevelStats.xp + points);
         SetScore(InterLevelStats.score + points);
+        if(InterLevelStats.score >= numScoreForHat) PlayerPrefs.SetInt("Hat5", 1);
     }
 
     private void SetXP(int xp)
@@ -215,6 +222,8 @@ public class GameManager : MonoBehaviour
         int points = ghost.points * this.ghostMultiplier;
         AddPoints(points);
         this.ghostMultiplier++;
+        InterLevelStats.numGhostsKilled++;
+        if(InterLevelStats.numGhostsKilled >= numGhostsForHat) PlayerPrefs.SetInt("Hat4", 1);
     }
 
     public void PacmanEaten()
@@ -224,6 +233,7 @@ public class GameManager : MonoBehaviour
         this.pacman.gameObject.SetActive(false);
         SetLives(InterLevelStats.lives - 1);
         this.pacman.CancelInvoke("unPhase");
+        InterLevelStats.hasNotDied = false;
         if(InterLevelStats.lives > 0)
         {
             shake.TriggerShake();

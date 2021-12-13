@@ -37,6 +37,15 @@ public class InterLevelStats : MonoBehaviour
     // Increases the length and respawn time of power-ups
     public static int powerupStat {get; set; }
 
+    // Number of ghosts killed over the run
+    public static int numGhostsKilled {get; set; }
+
+    // Flag for not dying during the run
+    public static bool hasNotDied {get; set; }
+
+    // List of used power ups during the run
+    public static List<string> usedPowerUps {get; set; }
+
     void Awake(){
         DontDestroyOnLoad(this.gameObject);
     }

@@ -17,6 +17,10 @@ public class ChangeSceneWithButton: MonoBehaviour {
     public void LoadNextLevel() {
         int sceneIndex = SceneUtility.GetBuildIndexByScenePath("Lvl" + (InterLevelStats.level % GameManager.numLevels + 1));
         if(sceneIndex >= 0) {
+            if(InterLevelStats.level == 4){
+                PlayerPrefs.SetInt("hat1", 1);
+                if(InterLevelStats.hasNotDied) PlayerPrefs.SetInt("hat3", 1);
+            }
             SceneManager.LoadSceneAsync(sceneIndex);
         } else {
             LoadFirstLevel();

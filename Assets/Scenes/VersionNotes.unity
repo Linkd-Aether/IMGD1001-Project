@@ -802,6 +802,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "In-Game Controls:\r\nW/Up Arrow = Move Up     A/Left Arrow = Move Left    
     S/Down Arrow = Move Down     D/Right Arrow = Move Right\r\nEscape = Pause\r\n\nVersion
+    0.0.4.0s5 Patch Notes:\n-Added hats\n-Added achievements, which unlock hats\n\nVersion
     0.0.3.0s5 Patch Notes:\n-Added 3 new levels (Feature 2)\n-Added a Portal spawning
     powerup\r (Feature 3)\n-Added \"infinite levels\" where level 5 will warp to
     level 1 after completion.\n\nVersion 0.0.2.1s5 Patch Notes:\n-Fixed main menu

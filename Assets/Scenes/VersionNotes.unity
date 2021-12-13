@@ -801,18 +801,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "In-Game Controls:\r\nW/Up Arrow = Move Up     A/Left Arrow = Move Left    
-    S/Down Arrow = Move Down     D/Right Arrow = Move Right\r\nEscape = Pause\r\n\r\nVersion
-    0.0.2.1s5 Patch Notes:\n-Fixed main menu video layering issue\n\r\nVersion 0.0.2.0s5
-    Patch Notes:\r\n-Added a screen shake script\r\n-Screen shake is triggered when
-    pacman dies (unless it is a gameover)\r\n\r\nVersion 0.0.1.0s5 Patch Notes:\r\n-Fixed
-    a bug with new level resetting level on loop\r\n-Added gif of gameplay to the
-    main menu (Feature 1)\r\n\r\nVersion 0.0.6.0s4 Patch Notes:\r\n-Fixed more bugs
-    and fixed UI scaling issue\r\n-Added a new Level Up Screen that appears after
-    level completion (New Feature)\r\n-Added the ability to upgrade stats with skill
-    points acquired from leveling up (New Feature)\r\n\r\nVersion 0.0.5.0s4 Patch
-    Notes:\r\n-Bunch of bugfixes\r\n-Made level transitions\r\n-Converted Score to
-    overall XP\r\n-Added UI elements for powerup descriptions\r\n-Added another powerup:
-    \u2018Fast\u2019 which increased pac-man\u2019s speed temporarily\r\n\r\nVersion
+    S/Down Arrow = Move Down     D/Right Arrow = Move Right\r\nEscape = Pause\r\n\nVersion
+    0.0.3.0s5 Patch Notes:\n-Added 3 new levels (Feature 2)\n-Added a Portal spawning
+    powerup\r (Feature 3)\n\nVersion 0.0.2.1s5 Patch Notes:\n-Fixed main menu video
+    layering issue\n\r\nVersion 0.0.2.0s5 Patch Notes:\r\n-Added a screen shake script\r\n-Screen
+    shake is triggered when pacman dies (unless it is a gameover)\r\n\r\nVersion
+    0.0.1.0s5 Patch Notes:\r\n-Fixed a bug with new level resetting level on loop\r\n-Added
+    gif of gameplay to the main menu (Feature 1)\r\n\r\nVersion 0.0.6.0s4 Patch Notes:\r\n-Fixed
+    more bugs and fixed UI scaling issue\r\n-Added a new Level Up Screen that appears
+    after level completion (New Feature)\r\n-Added the ability to upgrade stats with
+    skill points acquired from leveling up (New Feature)\r\n\r\nVersion 0.0.5.0s4
+    Patch Notes:\r\n-Bunch of bugfixes\r\n-Made level transitions\r\n-Converted Score
+    to overall XP\r\n-Added UI elements for powerup descriptions\r\n-Added another
+    powerup: \u2018Fast\u2019 which increased Pac-Man\u2019s speed temporarily\r\n\r\nVersion
     0.0.4.0s4 Patch Notes:\r\n-Added Powerup Randomization System (Feature 4)\r\n-Added
     Powerup respawn timer  \r\n\r\nVersion 0.0.3.0s4 Patch Notes:\r\n-Added a basic
     xp and player level system.  (Feature 3)\r\n-Added UI to view this info\r\n\r\nVersion

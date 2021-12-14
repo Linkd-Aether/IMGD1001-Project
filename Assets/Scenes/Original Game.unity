@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connection: {fileID: 2008197873}
+  teleportCount: 0
 --- !u!1001 &390637883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8930,6 +8931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connection: {fileID: 1475534605}
+  teleportCount: 0
 --- !u!1 &1475534604
 GameObject:
   m_ObjectHideFlags: 0
@@ -9058,7 +9060,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1638047172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e455dbc0d762ef846852eae28cdeab42, type: 3}
+  m_Script: {fileID: 11500000, guid: ac8abcd967fdc954599f0785f7ac2c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &1638047176
@@ -9962,7 +9964,7 @@ GameObject:
   - component: {fileID: 1719421621}
   - component: {fileID: 1719421620}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameManagerOriginal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9977,17 +9979,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719421619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b2ce65ae57a5a448ad0b8fb3ec595b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 94df7bdc1a3911b4e8bec7bfae9b27f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ghosts:
-  - {fileID: 390637885}
   - {fileID: 2056336565}
-  - {fileID: 2065975177}
   - {fileID: 1981638444}
+  - {fileID: 2065975177}
+  - {fileID: 390637885}
   pacman: {fileID: 1638047175}
   pellets: {fileID: 672904051}
-  _uiManager: {fileID: 0}
 --- !u!4 &1719421621
 Transform:
   m_ObjectHideFlags: 0

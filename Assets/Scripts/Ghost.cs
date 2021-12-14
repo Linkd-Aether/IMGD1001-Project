@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,11 +63,23 @@ public class Ghost : MonoBehaviour
         {
             if (this.frightened.enabled)
             {
-                FindObjectOfType<GameManager>().GhostEaten(this);
+                try{
+                    FindObjectOfType<GameManager>().GhostEaten(this);
+                }
+                catch(NullReferenceException e){
+                    e.GetHashCode();
+                    FindObjectOfType<GameManagerOriginal>().GhostEaten(this);
+                }
             }
             else
             {
-                FindObjectOfType<GameManager>().PacmanEaten();
+                try{
+                    FindObjectOfType<GameManager>().PacmanEaten();
+                }
+                catch(NullReferenceException e){
+                    e.GetHashCode();
+                    FindObjectOfType<GameManagerOriginal>().PacmanEaten();
+                }
             }
         }
     }

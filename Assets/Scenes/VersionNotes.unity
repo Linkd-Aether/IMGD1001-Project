@@ -802,6 +802,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "In-Game Controls:\r\nW/Up Arrow = Move Up     A/Left Arrow = Move Left    
     S/Down Arrow = Move Down     D/Right Arrow = Move Right\r\nEscape = Pause\r\n\nVersion
+    0.0.1.0s6 Patch Notes:\n-Added Future Work Scene\n-Added intended features to
+    a scrolling list\n-Added button to access this scene from the main menu\n\nVersion
     0.0.4.0s5 Patch Notes:\n-Added hats\n-Added achievements, which unlock hats (Feature
     4)\n\nVersion 0.0.3.0s5 Patch Notes:\n-Added 3 new levels (Feature 2)\n-Added
     a Portal spawning powerup\r (Feature 3)\n-Added \"infinite levels\" where level
